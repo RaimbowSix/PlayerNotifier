@@ -46,13 +46,13 @@ public class PlayerNotifier {
 
         for (String name : currentEnemySet) {
             if (!lastEnemySet.contains(name)) {
-                sendMessage("§1[§bPlayerNotifier§1] §4§lEnemy §4\"" + name + "\" §ahas §ajoined §4the lobby!");
+                sendMessage("§1[§bPlayerNotifier§1] §g(+) §4§lEnemy §4\"" + name + "\" §ahas §ajoined §4the lobby!");
             }
         }
 
         for (String name : lastEnemySet) {
             if (!currentEnemySet.contains(name)) {
-                sendMessage("§1[§bPlayerNotifier§1] §4§lEnemy §4\"" + name + "\" §ahas §aleft §4the lobby!");
+                sendMessage("§1[§bPlayerNotifier§1] §g(-) §4§lEnemy §4\"" + name + "\" §ahas §aleft §4the lobby!");
             }
         }
 
