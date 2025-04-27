@@ -23,11 +23,10 @@ Then type ./gradlew build in your IDE's terminal the output will be in PlayerNot
 To add / remove enemies type a new line in watchlist.txt with the name of the enemy
 
 example : 
-If I want to add raimbowsix, Jeb and Notch in my list I will type
+If I want to add raimbowsix, Jeb and Notch in my list I will type raimbowsix on the first line Jeb on the second line and Notch on the third line
 
-raimbowsix
-Jeb
-Notch
+![image](https://github.com/user-attachments/assets/109f459b-6131-4a00-8852-f8cbf9c61816)
+
 
 If you want to remove just delete the usernames from the text file.
 
