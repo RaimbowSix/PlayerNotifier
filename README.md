@@ -25,7 +25,7 @@ Darks HUD
 Open a command and go in the PlayerNotifier directory, then you build by using ./gradlew build.
 If you are using an IDE (like InteliJ or Eclipse...) make sure project sdk is java 8 and language level is 8 also make sure gradle jvm is using java 17.
 ## Future Updates
-- A working denicked
+- A working denicker
 - QuickMath solver
 - Venom timer
 - Mid overlay and Exfil points overlay
