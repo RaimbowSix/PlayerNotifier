@@ -17,7 +17,7 @@ Darks HUD
 <img width="568" height="111" alt="image" src="https://github.com/user-attachments/assets/5e46db23-39a3-4dcf-b1cb-e2d528b60e7f" />
 
 - ### Nicked Players Tracking :
-    As of now I did not make a denicked tho I started by adding an HUD on which you can see every nicked players in your lobby.
+    As of now I did not make a denicker tho I started by adding an HUD on which you can see every nicked players in your lobby.
 
 <img width="266" height="87" alt="image" src="https://github.com/user-attachments/assets/ce141998-0111-44d9-abbf-a2934cca4b10" />
 
