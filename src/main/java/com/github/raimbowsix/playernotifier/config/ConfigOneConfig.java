@@ -17,13 +17,13 @@ import javax.swing.text.html.Option;
 
 public class ConfigOneConfig extends Config {
     //categories
-    private static final String ENEMIES = "Enemies";
-    private static final String DARK = "Darks";
-    private static final String DENICKER = "Denicker";
+    private static final transient String ENEMIES = "Enemies";
+    private static final transient String DARK = "Darks";
+    private static final transient String DENICKER = "Denicker";
     //subcategories
-    private static final String ENEMIESOPTIONAL = "Optional";
-    private static final String DARKOPTIONAL = "Optional";
-    private static final String DENICKEROPTIONAL = "Optional";
+    private static final transient String ENEMIESOPTIONAL = "Optional";
+    private static final transient String DARKOPTIONAL = "Optional";
+    private static final transient String DENICKEROPTIONAL = "Optional";
 
     //Dark Pants
     @HUD(
