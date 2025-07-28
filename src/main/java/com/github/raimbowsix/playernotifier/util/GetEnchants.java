@@ -5,9 +5,18 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+<<<<<<< HEAD
 import java.util.HashSet;
 import java.util.Set;
 
+=======
+
+import java.util.HashSet;
+import java.util.Set;
+
+import static com.github.raimbowsix.playernotifier.util.EPitEnchants.fromString;
+
+>>>>>>> 9894e61267afd7773410df65ad4302406cfe45e7
 public class GetEnchants {
     public static Set<String> getEnchantsFromName (String name){
         Set<String> enchantKeys = new HashSet<>();

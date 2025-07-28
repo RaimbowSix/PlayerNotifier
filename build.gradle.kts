@@ -1,11 +1,19 @@
 @file:Suppress("UnstableApiUsage", "PropertyName")
+<<<<<<< HEAD
 
 import org.polyfrost.gradle.util.noServerRunConfigs
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 // Adds support for kotlin, and adds the Polyfrost Gradle Toolkit
 // which we use to prepare the environment.
+=======
+>>>>>>> 9894e61267afd7773410df65ad4302406cfe45e7
 
+import org.polyfrost.gradle.util.noServerRunConfigs
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
+// Adds support for kotlin, and adds the Polyfrost Gradle Toolkit
+// which we use to prepare the environment.
 plugins {
     kotlin("jvm")
     id("org.polyfrost.multi-version")
@@ -17,6 +25,7 @@ plugins {
     id("signing")
     java
 }
+<<<<<<< HEAD
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(8))
@@ -37,6 +46,22 @@ blossom {
     replaceToken("@ID@", mod_id)
 }
 
+=======
+
+// Gets the mod name, version and id from the `gradle.properties` file.
+val mod_name: String by project
+val mod_version: String by project
+val mod_id: String by project
+val mod_archives_name: String by project
+
+// Replaces the variables in `ExampleMod.java` to the ones specified in `gradle.properties`.
+blossom {
+    replaceToken("@VER@", mod_version)
+    replaceToken("@NAME@", mod_name)
+    replaceToken("@ID@", mod_id)
+}
+
+>>>>>>> 9894e61267afd7773410df65ad4302406cfe45e7
 // Sets the mod version to the one specified in `gradle.properties`. Make sure to change this following semver!
 version = mod_version
 // Sets the group, make sure to change this to your own. It can be a website you own backwards or your GitHub username.

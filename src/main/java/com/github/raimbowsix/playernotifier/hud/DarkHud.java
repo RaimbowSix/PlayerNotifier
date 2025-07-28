@@ -22,7 +22,12 @@ public class DarkHud extends TextHud {
                 Minecraft.getMinecraft().theWorld.playerEntities.stream()
                     .filter(DarkPants::hasDarks)
                     .forEach(p->{
+<<<<<<< HEAD
                         Darks.add(p.getDisplayName().getFormattedText()+ PlayerLocation.getPlayerDistance(p.getName(), ConfigOneConfig.darkDistance));
+=======
+                        Darks.add(p.getDisplayName().getFormattedText()+" "+GetEnchants.getDarkPantsEnchantFromName(p)+
+                            PlayerLocation.getPlayerDistance(p.getName(), ConfigOneConfig.darkDistance));
+>>>>>>> 9894e61267afd7773410df65ad4302406cfe45e7
                 });
             lines.add("§5Darks: " + Darks.size());
             lines.addAll(Darks);
