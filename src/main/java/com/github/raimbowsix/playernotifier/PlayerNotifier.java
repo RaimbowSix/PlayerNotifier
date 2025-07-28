@@ -3,12 +3,14 @@ package com.github.raimbowsix.playernotifier;
 import com.github.raimbowsix.playernotifier.commands.GetNBT;
 import com.github.raimbowsix.playernotifier.commands.Watchlist;
 import com.github.raimbowsix.playernotifier.config.ConfigOneConfig;
+import com.github.raimbowsix.playernotifier.modules.Bounties;
 import com.github.raimbowsix.playernotifier.modules.DarkPants;
 import com.github.raimbowsix.playernotifier.modules.Denicker;
 import com.github.raimbowsix.playernotifier.util.WatchlistManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.network.NetworkPlayerInfo;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,6 +21,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import com.github.raimbowsix.playernotifier.modules.Enemies;
 
 import java.util.Collection;
+import java.util.List;
 
 @Mod(modid = PlayerNotifier.MODID, name = PlayerNotifier.NAME, version = PlayerNotifier.VERSION, useMetadata = true)
 public class PlayerNotifier {
@@ -47,14 +50,17 @@ public class PlayerNotifier {
         }
     }
     public static Collection<NetworkPlayerInfo> players = null;
+    public static List<EntityPlayer> playerEntities = null;
     @SubscribeEvent
     public void onClientTick(TickEvent.ClientTickEvent event) {
         tickCount = tickCount+1;
         if (mc.thePlayer != null && mc.theWorld != null && tickCount>=20) {
             players = mc.getNetHandler().getPlayerInfoMap();
-            Enemies.notifyIfEnemiesInLobby();
-            DarkPants.notifyIfPlayerHasDarkPants();
-            Denicker.notifyIfPlayerIsNicked();
+            playerEntities = mc.theWorld.playerEntities;
+            Enemies.detectIfEnemiesInLobby();
+            DarkPants.detectIfPlayerHasDarkPants();
+            Denicker.detectIfPlayerIsNicked();
+            Bounties.detectIfPlayerHasBounty();
         }
     }
 }
