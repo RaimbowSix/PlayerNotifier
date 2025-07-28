@@ -21,16 +21,14 @@ public class NickedHud extends TextHud {
         if (Denicker.lastNickedSet.isEmpty()) {
             lines.add("No nicked in lobby");
         } else {
-            ArrayList<String> Nicked = new ArrayList<>();
-            if (Minecraft.getMinecraft().theWorld!=null && Minecraft.getMinecraft().theWorld.playerEntities != null)
+            lines.add("§bNicked: " + Denicker.lastNickedSet.toArray().length);
+            for (final String name : Denicker.lastNickedSet) {
                 Minecraft.getMinecraft().theWorld.playerEntities.stream()
-                        .filter(DarkPants::hasDarks)
-                        .forEach(p->{
-                            Nicked.add(p.getDisplayName().getFormattedText()+" "+ GetEnchants.getDarkPantsEnchantFromName(p)+
-                                    PlayerLocation.getPlayerDistance(p.getName(), ConfigOneConfig.nickedDistance));
-                        });
-            lines.add(EnumChatFormatting.DARK_PURPLE + "§bNicked: " + Nicked.size());
-            lines.addAll(Nicked);
+                        .filter(player -> player.getName().equalsIgnoreCase(name))
+                        .findFirst()
+                        .ifPresent(player -> lines.add(player.getDisplayName().getFormattedText()
+                                +PlayerLocation.getPlayerDistance(player.getName(), ConfigOneConfig.nickedDistance)));
+            }
         }
     }
 }

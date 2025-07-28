@@ -21,16 +21,14 @@ public class EnemiesHud extends TextHud {
         if (Enemies.lastEnemySet.isEmpty()) {
             lines.add("No enemies in lobby");
         } else {
-            ArrayList<String> Enemies = new ArrayList<>();
-            if (Minecraft.getMinecraft().theWorld!=null && Minecraft.getMinecraft().theWorld.playerEntities != null)
+            lines.add("§cEnemies: " + Enemies.lastEnemySet.toArray().length);
+            for (final String name : Enemies.lastEnemySet) {
                 Minecraft.getMinecraft().theWorld.playerEntities.stream()
-                        .filter(DarkPants::hasDarks)
-                        .forEach(p->{
-                            Enemies.add(p.getDisplayName().getFormattedText()+" "+ GetEnchants.getDarkPantsEnchantFromName(p)+
-                                    PlayerLocation.getPlayerDistance(p.getName(), ConfigOneConfig.enemyDistance));
-                        });
-            lines.add(EnumChatFormatting.DARK_PURPLE + "§cEnemies: " + Enemies.size());
-            lines.addAll(Enemies);
+                        .filter(player -> player.getName().equalsIgnoreCase(name))
+                        .findFirst()
+                        .ifPresent(player -> lines.add(player.getDisplayName().getFormattedText()
+                                +PlayerLocation.getPlayerDistance(player.getName(), ConfigOneConfig.enemyDistance)));
+            }
         }
     }
 }

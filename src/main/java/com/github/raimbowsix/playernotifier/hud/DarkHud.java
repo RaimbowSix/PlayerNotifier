@@ -6,7 +6,6 @@ import com.github.raimbowsix.playernotifier.modules.DarkPants;
 import com.github.raimbowsix.playernotifier.util.GetEnchants;
 import com.github.raimbowsix.playernotifier.util.PlayerLocation;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.EnumChatFormatting;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +23,9 @@ public class DarkHud extends TextHud {
                     .filter(DarkPants::hasDarks)
                     .forEach(p->{
                         Darks.add(p.getDisplayName().getFormattedText()+" "+GetEnchants.getDarkPantsEnchantFromName(p)+
-                                PlayerLocation.getPlayerDistance(p.getName(), ConfigOneConfig.darkDistance));
-                    });
-            lines.add(EnumChatFormatting.DARK_PURPLE + "§5Darks: " + Darks.size());
+                            PlayerLocation.getPlayerDistance(p.getName(), ConfigOneConfig.darkDistance));
+                });
+            lines.add("§5Darks: " + Darks.size());
             lines.addAll(Darks);
         }
     }
