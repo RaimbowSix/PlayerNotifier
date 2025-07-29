@@ -21,7 +21,7 @@ on their game. It was made using OneConfig for GUI and HUD.
 <img width="266" height="87" alt="image" src="https://github.com/user-attachments/assets/ce141998-0111-44d9-abbf-a2934cca4b10" />
 
 ## Building the Mod (In case you never built a mod in your life)
-Open a command and go in the PlayerNotifier directory, then you build by using ./gradlew build.
+Open a command prompt and go in the PlayerNotifier directory, then you build by using ./gradlew build.
 If you are using an IDE (like InteliJ or Eclipse...) make sure project sdk is java 8 and language level is 8 also make sure gradle jvm is using java 17.
 ## Future Updates
 - A working denicker
