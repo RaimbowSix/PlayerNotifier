@@ -2,6 +2,7 @@ package com.github.raimbowsix.playernotifier;
 
 import com.github.raimbowsix.playernotifier.commands.GetNBT;
 import com.github.raimbowsix.playernotifier.commands.Watchlist;
+import com.github.raimbowsix.playernotifier.commands.GetDisplayName;
 import com.github.raimbowsix.playernotifier.config.ConfigOneConfig;
 import com.github.raimbowsix.playernotifier.modules.Bounties;
 import com.github.raimbowsix.playernotifier.modules.DarkPants;
