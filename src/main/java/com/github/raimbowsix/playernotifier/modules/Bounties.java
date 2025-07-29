@@ -1,20 +1,26 @@
 package com.github.raimbowsix.playernotifier.modules;
 
+import java.util.regex.*;
 import com.github.raimbowsix.playernotifier.PlayerNotifier;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-
 import java.util.HashSet;
 import java.util.Set;
 
 public class Bounties {
+    public static boolean match(String input) {
+        String pattern = "§l\\d+g";
+        Matcher m = Pattern.compile(pattern).matcher(input);
+        return m.find();
+    }
     public static boolean hasBounty(EntityPlayer player){
         String name = player.getDisplayName().getFormattedText();
-        return name.matches("§r§6\\[.*?]§b [a-zA-Z0-9_]{1,16} §6§l\\d{3,}g§r");
+        return match(name);
     }
-    public static Set<String> currentBountiedSet = new HashSet<>();
+
     public static Set<String> lastBountiedSet = new HashSet<>();
     public static void detectIfPlayerHasBounty(){
+        Set<String> currentBountiedSet = new HashSet<>();
         Minecraft mc=Minecraft.getMinecraft();
         for (EntityPlayer player : PlayerNotifier.playerEntities){
             if (hasBounty(player)){
