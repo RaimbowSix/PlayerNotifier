@@ -1,4 +1,4 @@
- package com.github.raimbowsix.playernotifier.modules;
+package com.github.raimbowsix.playernotifier.modules;
 
 import com.github.raimbowsix.playernotifier.PlayerNotifier;
 import com.github.raimbowsix.playernotifier.config.ConfigOneConfig;
@@ -16,11 +16,7 @@ public class Enemies {
     public static boolean isEnemy (EntityPlayer player){
         return WatchlistManager.isEnemy(player.getName());
     }
-<<<<<<< HEAD
     public static void detectIfEnemiesInLobby() {
-=======
-    public static void notifyIfEnemiesInLobby() {
->>>>>>> 9894e61267afd7773410df65ad4302406cfe45e7
         Set<String> currentEnemySet = new HashSet<>();
         for (NetworkPlayerInfo info : PlayerNotifier.players) {
             String name = info.getGameProfile().getName();
