@@ -48,6 +48,15 @@ public class ConfigOneConfig extends Config {
             subcategory = BOUNTIESOPTIONAL
     )
     public static boolean bountyPosition = true;
+    @Slider(
+            name = "Minimal Bounty",
+            category = BOUNTIES,
+            subcategory = BOUNTIESOPTIONAL,
+            step = 200,
+            min = 0,
+            max = 5000
+    )
+    public static int bountyMinPosition = 600;
     //Dark Pants
     @HUD(
             name = "Dark Pants HUD",
