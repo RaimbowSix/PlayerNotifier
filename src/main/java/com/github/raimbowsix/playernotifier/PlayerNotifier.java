@@ -36,6 +36,7 @@ public class PlayerNotifier {
         //commands
         ClientCommandHandler.instance.registerCommand(new Watchlist());
         ClientCommandHandler.instance.registerCommand(new GetNBT());
+        ClientCommandHandler.instance.registerCommand(new GetDisplayName());
 
         WatchlistManager.loadWatchlist();
         MinecraftForge.EVENT_BUS.register(this);
