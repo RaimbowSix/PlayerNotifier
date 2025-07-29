@@ -19,11 +19,7 @@ public class Denicker {
     public static boolean isNicked(EntityPlayer playerEntity){
         return isNicked(playerEntity.getGameProfile().getId());
     }
-<<<<<<< HEAD
     public static void detectIfPlayerIsNicked(){
-=======
-    public static void notifyIfPlayerIsNicked(){
->>>>>>> 9894e61267afd7773410df65ad4302406cfe45e7
         Set<String> currentNickedSet = new HashSet<>();
         for(NetworkPlayerInfo info : PlayerNotifier.players){
             UUID playerUUID = info.getGameProfile().getId();
@@ -41,8 +37,4 @@ public class Denicker {
         lastNickedSet.clear();
         lastNickedSet.addAll(currentNickedSet);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9894e61267afd7773410df65ad4302406cfe45e7
